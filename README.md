@@ -25,6 +25,15 @@ In the output, you'll find options to open the app in a
 
 You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
 
+## Tech Stack
+
+[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[React](https://reactjs.org/)
+[TailwindCSS](https://tailwindcss.com/)
+[Expo React Native](https://docs.expo.dev/)
+
 ## Get a fresh project
 
 When you're ready, run:
