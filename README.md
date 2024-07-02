@@ -31,7 +31,7 @@ You can start developing by editing the files inside the **app** directory. This
 [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [React](https://reactjs.org/)
-[TailwindCSS](https://tailwindcss.com/)
+[NativeWind](https://native.wind.org/)
 [Expo React Native](https://docs.expo.dev/)
 
 ## Get a fresh project
