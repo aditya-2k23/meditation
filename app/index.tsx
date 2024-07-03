@@ -1,6 +1,5 @@
 import { View, Text, ImageBackground, SafeAreaView } from "react-native";
 import React from "react";
-import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 
 import beachImage from "../assets/meditation-images/beach.webp";
@@ -19,7 +18,7 @@ const App = () => {
         className="flex-1"
       >
         <AppGradient colors={["rgba(0,0,0,0.4)", "rgba(0,0,0,0.8)"]}>
-          <SafeAreaView className="flex-1 px-1 pt-8 pb-4 justify-between">
+          <SafeAreaView className="flex-1 px-1 pt-2 pb-0 justify-between">
             <View>
               <Text className="text-center text-white font-semibold text-4xl">
                 Simple Meditation
