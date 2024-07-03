@@ -4,6 +4,7 @@ import { LinearGradient } from "expo-linear-gradient";
 import { StatusBar } from "expo-status-bar";
 
 import beachImage from "../assets/meditation-images/beach.webp";
+import CustomButton from "@/components/CustomButton";
 
 const App = () => {
   return (
@@ -17,17 +18,24 @@ const App = () => {
           className="flex-1"
           colors={["rgba(0,0,0,0.4)", "rgba(0,0,0,0.8)"]}
         >
-          <SafeAreaView className="flex-1 px-1 justify-between">
+          <SafeAreaView className="flex-1 mx-4 mt-12 mb-8 justify-between">
             <View>
               <Text className="text-center text-white font-semibold text-4xl">
                 Simple Meditation
               </Text>
-              <Text className="text-center text-white text-2xl mt-3">
+              <Text className="text-center text-gray-200 font-normal text-2xl mt-3">
                 Simplifying Meditation for Everyone
               </Text>
             </View>
 
-            <StatusBar style="light"></StatusBar>
+            <View>
+              <CustomButton
+                onPress={() => console.log("tap")}
+                title="Get Started"
+              />
+            </View>
+
+            <StatusBar style="light" />
           </SafeAreaView>
         </LinearGradient>
       </ImageBackground>
