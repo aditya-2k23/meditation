@@ -62,8 +62,10 @@ const Meditate = () => {
 
           <View className="mb-5">
             <CustomButton
-              title="Start Meditation"
+              title={meditating ? "Meditating..." : "Start Meditating"}
               onPress={() => setMeditating(true)}
+              containerStyles={meditating ? "bg-gray-600" : ""}
+              textStyles={meditating ? "text-white" : ""}
             />
           </View>
         </AppGradient>
