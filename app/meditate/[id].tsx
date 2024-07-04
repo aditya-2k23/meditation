@@ -1,9 +1,11 @@
 import { View, Text, ImageBackground, Pressable } from "react-native";
 import React, { useEffect, useState } from "react";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
+import { MEDITATION_DATA, AUDIO_FILES } from "@/constants/MeditationData";
 import AppGradient from "@/components/AppGradient";
 import { router, useLocalSearchParams } from "expo-router";
 import { AntDesign } from "@expo/vector-icons";
+import { Audio } from "expo-av";
 import CustomButton from "@/components/CustomButton";
 
 const Meditate = () => {
@@ -12,6 +14,10 @@ const Meditate = () => {
   const [secondsRemaining, setSecondsRemaining] = useState(10);
 
   const [meditating, setMeditating] = useState(false);
+
+  const [audioSound, setAudioSound] = useState<Audio.Sound>();
+
+  const [playingAudio, setPlayingAudio] = useState(false);
 
   useEffect(() => {
     let timerId: NodeJS.Timeout;
@@ -31,6 +37,42 @@ const Meditate = () => {
       clearTimeout(timerId);
     };
   }, [secondsRemaining, meditating]);
+
+  useEffect(() => {
+    return () => {
+      audioSound?.unloadAsync();
+    };
+  }, [audioSound]);
+
+  const toggleMeditationSessionStatus = async () => {
+    if (secondsRemaining === 0) setSecondsRemaining(10);
+
+    setMeditating(!meditating);
+
+    await toggleSound();
+  };
+
+  const toggleSound = async () => {
+    const sound = audioSound ? audioSound : await initializeSound();
+
+    const status = await sound?.getStatusAsync();
+
+    if (status?.isLoaded && !playingAudio) {
+      await sound.playAsync();
+      setPlayingAudio(true);
+    } else {
+      await sound.pauseAsync();
+    }
+  };
+
+  const initializeSound = async () => {
+    const audioFileName = MEDITATION_DATA[Number(id) - 1].audio;
+
+    const { sound } = await Audio.Sound.createAsync(AUDIO_FILES[audioFileName]);
+
+    setAudioSound(sound);
+    return sound;
+  };
 
   const formattedTimeMinutes = String(
     Math.floor(secondsRemaining / 60)
@@ -62,17 +104,12 @@ const Meditate = () => {
 
           <View className="mb-5">
             <CustomButton
-              title={
-                secondsRemaining === 0 || meditating
-                  ? "Reset"
-                  : "Start Meditating"
-              }
-              onPress={
-                secondsRemaining === 0
-                  ? () => setSecondsRemaining(10)
-                  : () => setMeditating(true)
-              }
-              containerStyles={meditating ? "bg-gray-700 opacity-70" : ""}
+              title={meditating ? "Pause" : "Start Meditation"}
+              onPress={() => {
+                setMeditating(true);
+                toggleMeditationSessionStatus();
+              }}
+              containerStyles={meditating ? "bg-gray-700" : ""}
               textStyles={meditating ? "text-white opacity-80" : ""}
             />
           </View>
