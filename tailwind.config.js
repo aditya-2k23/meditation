@@ -10,6 +10,7 @@ module.exports = {
     extend: {
       fontFamily: {
         rmono: ["Roboto-Mono", "sans-serif"],
+        smono: ["Space-Mono", "sans-serif"],
       },
     },
   },

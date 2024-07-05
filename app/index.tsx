@@ -18,12 +18,12 @@ const App = () => {
         className="flex-1"
       >
         <AppGradient colors={["rgba(0,0,0,0.4)", "rgba(0,0,0,0.8)"]}>
-          <SafeAreaView className="flex-1 px-1 pt-2 pb-0 justify-between">
+          <SafeAreaView className="flex-1 pt-2 justify-between">
             <View>
               <Text className="text-center text-white font-semibold text-4xl">
                 Simple Meditation
               </Text>
-              <Text className="text-center text-gray-200 font-normal text-2xl mt-3">
+              <Text className="text-center text-gray-200 font-normal text-2xl mt-3 font-smono">
                 Simplifying Meditation for Everyone
               </Text>
             </View>
@@ -31,6 +31,7 @@ const App = () => {
               <CustomButton
                 onPress={() => router.push("/NatureMeditate")}
                 title="Get Started"
+                textStyles="font-smono text-xl"
               />
             </View>
             <StatusBar style="light" />
