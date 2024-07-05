@@ -20,7 +20,7 @@ const Meditate = () => {
 
     if (secondsRemaining === 0) {
       setMeditating(false);
-      setPlayingAudio(false);
+      stopSound();
       return;
     }
 
@@ -45,13 +45,11 @@ const Meditate = () => {
     if (secondsRemaining === 0) setSecondsRemaining(10);
 
     setMeditating(!meditating);
-
     await toggleSound();
   };
 
   const toggleSound = async () => {
     const sound = audioSound ? audioSound : await initializeSound();
-
     const status = await sound?.getStatusAsync();
 
     if (status?.isLoaded && !playingAudio) {
@@ -63,9 +61,18 @@ const Meditate = () => {
     }
   };
 
+  const stopSound = async () => {
+    if (audioSound) {
+      const status = await audioSound.getStatusAsync();
+      if (status?.isLoaded && playingAudio) {
+        await audioSound.stopAsync();
+        setPlayingAudio(false);
+      }
+    }
+  };
+
   const initializeSound = async () => {
     const audioFileName = MEDITATION_DATA[Number(id) - 1].audio;
-
     const { sound } = await Audio.Sound.createAsync(AUDIO_FILES[audioFileName]);
 
     setAudioSound(sound);
