@@ -10,13 +10,9 @@ import CustomButton from "@/components/CustomButton";
 
 const Meditate = () => {
   const { id } = useLocalSearchParams();
-
   const [secondsRemaining, setSecondsRemaining] = useState(10);
-
   const [meditating, setMeditating] = useState(false);
-
   const [audioSound, setAudioSound] = useState<Audio.Sound>();
-
   const [playingAudio, setPlayingAudio] = useState(false);
 
   useEffect(() => {
@@ -24,6 +20,7 @@ const Meditate = () => {
 
     if (secondsRemaining === 0) {
       setMeditating(false);
+      setPlayingAudio(false);
       return;
     }
 
@@ -60,8 +57,9 @@ const Meditate = () => {
     if (status?.isLoaded && !playingAudio) {
       await sound.playAsync();
       setPlayingAudio(true);
-    } else {
+    } else if (status?.isLoaded && playingAudio) {
       await sound.pauseAsync();
+      setPlayingAudio(false);
     }
   };
 
@@ -105,10 +103,7 @@ const Meditate = () => {
           <View className="mb-5">
             <CustomButton
               title={meditating ? "Pause" : "Start Meditation"}
-              onPress={() => {
-                setMeditating(true);
-                toggleMeditationSessionStatus();
-              }}
+              onPress={toggleMeditationSessionStatus}
               containerStyles={meditating ? "bg-gray-700" : ""}
               textStyles={meditating ? "text-white opacity-80" : ""}
             />
