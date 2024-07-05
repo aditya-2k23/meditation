@@ -5,15 +5,20 @@ import { StatusBar } from "expo-status-bar";
 import { MEDITATION_DATA } from "@/constants/MeditationData";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
 import { LinearGradient } from "expo-linear-gradient";
-import { router } from "expo-router";
+import { router, useLocalSearchParams } from "expo-router";
 
 const NatureMeditate = () => {
+  const { username } = useLocalSearchParams<{ username: string }>();
+
   return (
     <View className="flex-1">
       <AppGradient colors={["#161b2e", "#0a4d4a", "#766e67"]}>
         <View className="mb-6">
-          <Text className="text-gray-200 mb-3 font-bold text-4xl text-left">
-            Welcome Username
+          <Text className="text-gray-300 mb-3 text-4xl text-left">
+            Welcome{" "}
+            <Text className="text-white font-smono font-semibold">
+              {username}
+            </Text>
           </Text>
           <Text className="text-indigo-100 text-xl font-medium">
             Start your meditation practice today

@@ -1,4 +1,10 @@
-import { View, Text, ImageBackground, SafeAreaView } from "react-native";
+import {
+  View,
+  Text,
+  ImageBackground,
+  SafeAreaView,
+  TextInput,
+} from "react-native";
 import { StatusBar } from "expo-status-bar";
 
 import beachImage from "../assets/meditation-images/beach.webp";
@@ -6,7 +12,7 @@ import CustomButton from "@/components/CustomButton";
 import { useRouter } from "expo-router";
 import AppGradient from "@/components/AppGradient";
 import * as NavigationBar from "expo-navigation-bar";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const App = () => {
   const router = useRouter();
@@ -14,6 +20,8 @@ const App = () => {
   useEffect(() => {
     NavigationBar.setBackgroundColorAsync("black");
   }, []);
+
+  const [text, onChangeText] = useState("");
 
   return (
     <View className="flex-1">
@@ -33,8 +41,22 @@ const App = () => {
               </Text>
             </View>
             <View>
+              <TextInput
+                placeholder="Enter your name"
+                placeholderTextColor="#44444d"
+                className="bg-gray-300 text-center text-xl p-2 h-16 rounded-xl mt-3"
+                onChangeText={onChangeText}
+                value={text}
+              />
+            </View>
+            <View>
               <CustomButton
-                onPress={() => router.push("/NatureMeditate")}
+                onPress={() =>
+                  router.push({
+                    pathname: "/NatureMeditate",
+                    params: { username: text },
+                  })
+                }
                 title="Get Started"
                 textStyles="font-smono text-xl"
               />
