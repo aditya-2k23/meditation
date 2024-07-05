@@ -1,9 +1,15 @@
 import React from "react";
-import { Tabs } from "expo-router";
+import { Tabs, useRouter } from "expo-router";
 import Colors from "@/constants/Colors";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 
 const TabsLayout = () => {
+  const router = useRouter();
+
+  const handleHomePress = () => {
+    router.replace("/"); // This will navigate to the root index.tsx
+  };
+
   return (
     <Tabs
       screenOptions={{
@@ -11,6 +17,21 @@ const TabsLayout = () => {
         tabBarActiveTintColor: Colors.primary,
       }}
     >
+      <Tabs.Screen
+        name="Home"
+        options={{
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" size={24} color={color} />
+          ),
+        }}
+        listeners={{
+          tabPress: (e) => {
+            e.preventDefault();
+            handleHomePress();
+          },
+        }}
+      />
       <Tabs.Screen
         name="NatureMeditate"
         options={{
