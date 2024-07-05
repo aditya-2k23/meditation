@@ -64,7 +64,7 @@ const AffirmationPractice = () => {
                 {sentences.map((sentence, idx) => (
                   <Text
                     key={idx}
-                    className="text-white text-3xl mb-12 font-bold text-center"
+                    className="text-white text-3xl mb-12 font-semibold tracking-tighter leading-tight font-smono text-center"
                   >
                     {sentence}.
                   </Text>

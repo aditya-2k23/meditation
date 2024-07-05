@@ -8,6 +8,7 @@ import { AntDesign } from "@expo/vector-icons";
 import { Audio } from "expo-av";
 import CustomButton from "@/components/CustomButton";
 import { TimerContext } from "@/context/TimerContext";
+import { StatusBar } from "expo-status-bar";
 
 const Meditate = () => {
   const { id } = useLocalSearchParams();
@@ -135,6 +136,7 @@ const Meditate = () => {
           </View>
         </AppGradient>
       </ImageBackground>
+      <StatusBar hidden />
     </View>
   );
 };

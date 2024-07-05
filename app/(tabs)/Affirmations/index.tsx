@@ -8,7 +8,7 @@ const Affirmations = () => {
     <View className="flex-1">
       <AppGradient colors={["#2e1f58", "#54426b", "#a790af"]}>
         <ScrollView showsVerticalScrollIndicator={false}>
-          <Text className="text-zinc-50 text-3xl font-bold">
+          <Text className="text-zinc-50 text-3xl font-semibold font-smono">
             Change your beliefs with Affirmations
           </Text>
           <View>

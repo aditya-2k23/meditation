@@ -44,7 +44,7 @@ const NatureMeditate = () => {
                     colors={["transparent", "rgba(0,0,0,0.8)"]}
                     className="flex-1 justify-center items-center"
                   >
-                    <Text className="text-gray-100 text-3xl font-bold text-center">
+                    <Text className="text-gray-100 font-semibold text-3xl text-center font-rmono">
                       {item.title}
                     </Text>
                   </LinearGradient>
