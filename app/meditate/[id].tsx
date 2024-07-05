@@ -1,5 +1,5 @@
 import { View, Text, ImageBackground, Pressable } from "react-native";
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import MEDITATION_IMAGES from "@/constants/meditation-images";
 import { MEDITATION_DATA, AUDIO_FILES } from "@/constants/MeditationData";
 import AppGradient from "@/components/AppGradient";

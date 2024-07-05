@@ -1,5 +1,4 @@
 import { View, Text, FlatList, Pressable, ImageBackground } from "react-native";
-import React from "react";
 import AppGradient from "@/components/AppGradient";
 import { StatusBar } from "expo-status-bar";
 

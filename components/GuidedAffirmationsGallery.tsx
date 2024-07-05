@@ -1,5 +1,4 @@
 import { View, Text, FlatList, Pressable, Image } from "react-native";
-import React from "react";
 import type { GalleryPreviewData } from "@/constants/models/AffirmationCategory";
 import { Link } from "expo-router";
 

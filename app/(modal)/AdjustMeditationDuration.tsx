@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from "react-native";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import AppGradient from "@/components/AppGradient";
 import { AntDesign } from "@expo/vector-icons";
 import { router } from "expo-router";

@@ -5,7 +5,7 @@ import {
   Pressable,
   ScrollView,
 } from "react-native";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocalSearchParams, router } from "expo-router";
 import type { GalleryPreviewData } from "@/constants/models/AffirmationCategory";
 import AFFIRMATION_GALLERY from "@/constants/affirmation-gallery";

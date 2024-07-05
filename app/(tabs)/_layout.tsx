@@ -1,4 +1,3 @@
-import React from "react";
 import { Tabs, useRouter } from "expo-router";
 import Colors from "@/constants/Colors";
 import { MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
