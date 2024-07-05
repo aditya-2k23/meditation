@@ -1,5 +1,7 @@
+import App from "../index";
+
 const Home = () => {
-  return <></>;
+  return <App></App>;
 };
 
 export default Home;
