@@ -5,9 +5,15 @@ import beachImage from "../assets/meditation-images/beach.webp";
 import CustomButton from "@/components/CustomButton";
 import { useRouter } from "expo-router";
 import AppGradient from "@/components/AppGradient";
+import * as NavigationBar from "expo-navigation-bar";
+import { useEffect } from "react";
 
 const App = () => {
   const router = useRouter();
+
+  useEffect(() => {
+    NavigationBar.setBackgroundColorAsync("black");
+  }, []);
 
   return (
     <View className="flex-1">
