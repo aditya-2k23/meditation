@@ -16,7 +16,7 @@ const NatureMeditate = () => {
         <View className="mb-6">
           <Text className="text-gray-300 mb-3 text-4xl text-left">
             Welcome{" "}
-            <Text className="text-white font-smono font-semibold">
+            <Text className="text-white font-smono font-semibold underline">
               {username || "User"}
             </Text>
           </Text>
