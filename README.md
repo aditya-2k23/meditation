@@ -1,59 +1,85 @@
-# Welcome to your Expo app 👋
+# Meditation
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Welcome to the Meditation app, a React Native project developed using Expo. This app aims to help users practice mindfulness and meditation with ease.
 
-## Get started
+Download the app's `.aab` file from [here](https://expo.dev/artifacts/eas/iLQnaX7DWvYQLnXrriegQq.aab)
 
-1. Install dependencies
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Screenshots](#screenshots)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Contact](#contact)
+
+## Introduction
+
+The Meditation app is designed to provide a simple and effective way for users to practice meditation and mindfulness. Whether you are a beginner or an experienced meditator, this app offers a variety of guided sessions and tools to enhance your meditation practice.
+
+## Features
+
+- Guided meditation sessions
+- Timer with customizable intervals
+- Background music for meditation
+- User-friendly interface
+
+## Screenshots
+
+![Screenshot 1](<./assets/images/Screenshot1%20(2).jpg>)
+
+![Screenshot 1](<./assets/images/Screenshot1%20(1).jpg>)
+
+![Screenshot 2](<./assets/images/Screenshot1%20(4).jpg>)
+
+## Installation
+
+To get started with the Meditation app, follow these steps:
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/meditation.git
+   ```
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd meditation
+   ```
+
+3. **Install the dependencies:**
 
    ```bash
    npm install
    ```
 
-2. Start the app
-
+4. **Start the Expo server:**
    ```bash
-    npx expo start
+   npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Usage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+After starting the Expo server, you can use the Expo Go app on your mobile device to scan the QR code and run the Meditation app. Alternatively, you can use an emulator for Android or iOS.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Contributing
 
-## Tech Stack
+Contributions are welcome! If you have any ideas, suggestions, or bug reports, please open an issue or submit a pull request.
 
-[HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-[CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[React](https://reactjs.org/)
-[NativeWind](https://native.wind.org/)
-[Expo React Native](https://docs.expo.dev/)
+1. Fork the repository
+2. Create a new branch: `git checkout -b my-feature-branch`
+3. Make your changes and commit them: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-feature-branch`
+5. Submit a pull request
 
-## Get a fresh project
+Learn more about [contributing](https://docs.github.com/en/get-started/exploring-projects-on-github/contributing-to-a-project).
 
-When you're ready, run:
+### Contact
 
-```bash
-npm run reset-project
-```
+If you have any questions or feedback, feel free to reach out to me at [holaaditya123@gmail.com](mailto:holaaditya123@gmail.com).
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+---
 
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Happy Meditating! 🧘‍♂️🌿
